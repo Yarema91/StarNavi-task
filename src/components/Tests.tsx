@@ -23,7 +23,6 @@ const Tests: React.FC<Test> = ({rowIndex, colIndex}) => {
 
     setTodos([...todos, {row: rowIndex + 1, col: colIndex + 1 } as any])
 }
-
 console.log('todos', todos);
 
 
