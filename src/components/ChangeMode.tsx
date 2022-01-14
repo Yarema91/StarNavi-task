@@ -29,7 +29,6 @@ const ChangeMode = ({ dataMode }: { dataMode: any }) => {
         .filter((item: any) => item.name === value)
         .map((item: any) => item.field
         );
-
       setFields(field[0]);
     }
   }
@@ -51,7 +50,7 @@ const ChangeMode = ({ dataMode }: { dataMode: any }) => {
         <button type="button" className="btn btn-primary me-2" onClick={onClick}>Start</button>
       </div>
 
-      <Field fields={fields} />
+      <Field  fields={fields} />
     </Card>
   )
 }

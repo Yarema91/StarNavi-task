@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Card, OverlayTrigger } from 'react-bootstrap';
 import Cell from './Cell';
-import Tests from './Tests';
 
 const Fields = ({ fields }: { fields: any }) => {
 
@@ -11,7 +10,7 @@ const Fields = ({ fields }: { fields: any }) => {
 
 
     return (
-        <div className=" d-flex justify-content-center ">
+        <div className=" d-flex justify-content-center ms-2 me-2 mt-3">
             <div data-cy="grid-container" >
                 {[...Array(fields)].map((_, rowIndex) => (
                     <div className="d-flex" data-cy="grid-row-container" key={rowIndex}>
@@ -37,17 +36,14 @@ const Fields = ({ fields }: { fields: any }) => {
                     </div>
                 ))}
             </div>
-            {/* <Tests todos={[]} row={0} col={0} rowIndex={3} colIndex={0}/> */}
 
-            <div className="justify-content-center ">
-                <h3> Hover squares</h3>
+            <div className="justify-content-center ms-3">
+                <h4> Hover squares</h4>
                 {data && data.map((i: any) => (
-                    <div>row{i.row}, col{i.col}</div>
+                    <div style={{backgroundColor: "#fffae0", margin: ".2em"}}>row {i.row}  col {i.col}</div>
                 ))}
             </div>
-
         </div>
-
     )
 }
 

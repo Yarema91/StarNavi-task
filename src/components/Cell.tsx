@@ -6,8 +6,6 @@ let info = [
     { rows: 2, columns: 2 },
 ];
 
-// { rowIndex, colIndex, onHover }: { rowIndex: number, colIndex: number, onHover: any }
-
 const Cell = ({ rowIndex, colIndex, onAdd, onRemove }: { rowIndex: number, colIndex: number, onAdd: any, onRemove: any }) => {
 
     const [bgColour, setBgColour] = useState("#ffffff");
@@ -15,13 +13,6 @@ const Cell = ({ rowIndex, colIndex, onAdd, onRemove }: { rowIndex: number, colIn
 
     //      let info1 = `rows: ${rowIndex+1}, columns: ${colIndex+1}` as any;
 
-    // const changeColor: any = () => {
-    // if(bgColour != "#ffffff"){
-    //remove
-    // setInfos( ...infos
-    //     .filter([...infos.filter((info: any) => info.rows != infoWhite.rows && info.columns != infoWhite.columns)])
-    //     )       
-    //   }
 
     // const handleSubmit = (e: { preventDefault: () => void; }) => {
     //add

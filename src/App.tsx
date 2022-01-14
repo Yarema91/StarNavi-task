@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Fields from './components/Field';
 import axios from "axios";
 import ChangeMode from './components/ChangeMode';
-import Tests from './components/Tests';
 
 
 // type Type =  {
@@ -27,10 +26,8 @@ const App = () => {
       const mode = [];
       for (const [name, value] of Object.entries(data) as any) {
        
-        // if (value === "any") {
         const field: number = value.field;
         mode.push({ name, field })
-        // }
       }
 
       setDateMode(mode);
