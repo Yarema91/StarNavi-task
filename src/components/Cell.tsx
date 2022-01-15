@@ -2,10 +2,10 @@ import { match } from "assert";
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 
-let info = [
-    { rows: 5, columns: 5 },
-    { rows: 2, columns: 2 },
-];
+// let info = [
+//     { rows: 5, columns: 5 },
+//     { rows: 2, columns: 2 },
+// ];
 
 const Cell = ({ rowIndex, colIndex, onAdd, onRemove }: { rowIndex: number, colIndex: number, onAdd: any, onRemove: any }) => {
 
@@ -31,6 +31,7 @@ const Cell = ({ rowIndex, colIndex, onAdd, onRemove }: { rowIndex: number, colIn
                 height: '5vh',
                 width: '5vh',
                 border: '.1rem solid',
+                // position:  'absolute' 
                 // maxWidth: 'vmin'
             }}>
         </div>

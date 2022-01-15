@@ -14,6 +14,10 @@ const ChangeMode = ({ dataMode }: { dataMode: any }) => {
   const [fields, setFields] = useState<number>(5);
 
 
+  const [data, setData] = useState([]) as any;
+
+
+
   const handleChange = (e: any) => {
     const selectValue = e.target.value;
     setValue(selectValue);
@@ -39,24 +43,54 @@ const ChangeMode = ({ dataMode }: { dataMode: any }) => {
     align-items-center 
     justify-content-center d-flex  m-auto justify-content-center w-fit-content " style={{
           width: "fit-content",
-          blockSize: '75% content-box'
+          // blockSize: '75% content-box'
         }}>
-        <div className=" d-flex justify-content-center ">
-          <select className="form-select me-2"
-            value={value}
-            onChange={handleChange}
-          >
-            {dataMode && dataMode.map((item: any) => (
-              <option value={item.name} key={item.name}>
-                {item.name}
-              </option>
-            ))
-            }
-          </select>
-          <button type="button" className="btn btn-primary me-2" onClick={onClick}>Start</button>
-        </div>
 
-        <Field fields={fields} />
+        <div className=" d-flex justify-content-center ">
+
+          <div>
+            <div className=" d-flex justify-content-center ">
+              <select className="form-select me-2"
+                value={value}
+                onChange={handleChange}
+              >
+                {dataMode && dataMode.map((item: any) => (
+                  <option value={item.name} key={item.name}>
+                    {item.name}
+                  </option>
+                ))
+                }
+              </select>
+              <button type="button" className="btn btn-primary me-2" onClick={onClick}>Start</button>
+            </div>
+
+
+            <Field fields={fields}
+              onAdd={(info: any, i: number) => {
+                // info.id = data.length + 1;
+                info.id = (Math.random() * 100).toFixed(2)
+                setData([...data, info]);
+              }}
+              onRemove={(infoWhite: any) => {
+                const newData = data
+                  .filter((item: any) => !((item.row == infoWhite.row) && (item.col == infoWhite.col))
+                  );
+                setData(newData);
+              }} rowIndex={0} colIndex={0} />
+          </div>
+
+          <div className="justify-content-center ms-3" >
+            <h4> Hover squares</h4>
+            <div style={{ maxHeight: '81vh', overflow: "auto", }}>
+              {data && data.map((i: any) => (
+                <div style={{
+                  backgroundColor: "#fffae0", margin: ".2em",
+                }}
+                  key={i.id}>row {i.row}  col {i.col}</div>
+              ))}
+            </div>
+          </div>
+        </div>
       </Card>
     </div>
   )
