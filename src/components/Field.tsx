@@ -8,9 +8,11 @@ const Fields = ({ fields }: { fields: any }) => {
 
     return (
         <div className=" d-flex justify-content-center ms-2 me-2 mt-3 ">
-            <div data-cy="grid-container w-50 col-md-2" >
+            <div data-cy="grid-container  col-md-2 "
+
+            >
                 {[...Array(fields)].map((_, rowIndex) => (
-                    <div className="d-flex" data-cy="grid-row-container"   key={rowIndex}>
+                    <div className="d-flex" data-cy="grid-row-container" key={rowIndex}>
 
                         {[...Array(fields)].map((_, colIndex) => (
                             <div data-cy="block" key={colIndex} >
@@ -19,17 +21,17 @@ const Fields = ({ fields }: { fields: any }) => {
                                     rowIndex={rowIndex}
                                     colIndex={colIndex}
                                     onAdd={(info: any, i: number) => {
-                                        info.id = data.length +1
+                                        info.id = data.length + 1
                                         setData([...data, info])
                                     }}
                                     onRemove={
                                         (infoWhite: any) => {
-                                        console.log('jbj', infoWhite)
-                                        const newData = data
-                                        .filter((item: any) => 
-                                       !((item.row == infoWhite.row) && (item.col == infoWhite.col))
-                                       )
-                                        setData(newData)
+                                            console.log('jbj', infoWhite)
+                                            const newData = data
+                                                .filter((item: any) =>
+                                                    !((item.row == infoWhite.row) && (item.col == infoWhite.col))
+                                                )
+                                            setData(newData)
                                         }
                                     }
                                 />
@@ -40,11 +42,16 @@ const Fields = ({ fields }: { fields: any }) => {
                 ))}
             </div>
 
-            <div className="justify-content-center ms-3">
+            <div className="justify-content-center ms-3" >
                 <h4> Hover squares</h4>
-                {data && data.map((i: any) => (
-                    <div style={{ backgroundColor: "#fffae0", margin: ".2em" }} key={i.id}>row {i.row}  col {i.col}</div>
-                ))}
+                <div style={{ height: '46vh', overflow: "auto", }}>
+                    {data && data.map((i: any) => (
+                        <div style={{
+                            backgroundColor: "#fffae0", margin: ".2em",
+                        }}
+                            key={i.id}>row {i.row}  col {i.col}</div>
+                    ))}
+                </div>
             </div>
         </div>
     )

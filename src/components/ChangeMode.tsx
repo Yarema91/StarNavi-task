@@ -33,29 +33,32 @@ const ChangeMode = ({ dataMode }: { dataMode: any }) => {
     }
   }
 
-  
-            
   return (
-    <Card body className="  ms-2 me-2 mt-3 container-fluid p-0 m-0 
+    <div className="row m-auto p-2em d-flex align-items-flex-center justify-content-center boxSizing-border-box">
+      <Card body className=" container-fluid ms-4 me-4 mt-3 p-0 m-auto w-60 
     align-items-center 
-    justify-content-center d-flex   ">
-      <div className=" d-flex justify-content-center ">
-        <select className="form-select me-2"
-          value={value}
-          onChange={handleChange}
-        >
-          {dataMode && dataMode.map((item: any) => (
-            <option value={item.name} key={item.name}>
-              {item.name}
-            </option>
-          ))
-          }
-        </select>
-        <button type="button" className="btn btn-primary me-2" onClick={onClick}>Start</button>
-      </div>
+    justify-content-center d-flex  m-auto justify-content-center w-fit-content " style={{
+          width: "fit-content",
+          blockSize: '75% content-box'
+        }}>
+        <div className=" d-flex justify-content-center ">
+          <select className="form-select me-2"
+            value={value}
+            onChange={handleChange}
+          >
+            {dataMode && dataMode.map((item: any) => (
+              <option value={item.name} key={item.name}>
+                {item.name}
+              </option>
+            ))
+            }
+          </select>
+          <button type="button" className="btn btn-primary me-2" onClick={onClick}>Start</button>
+        </div>
 
-      <Field  fields={fields} />
-    </Card>
+        <Field fields={fields} />
+      </Card>
+    </div>
   )
 }
 

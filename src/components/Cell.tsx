@@ -31,7 +31,7 @@ const Cell = ({ rowIndex, colIndex, onAdd, onRemove }: { rowIndex: number, colIn
                 height: '5vh',
                 width: '5vh',
                 border: '.1rem solid',
-                maxWidth: 'vmin'
+                // maxWidth: 'vmin'
             }}>
         </div>
     )
