@@ -1,3 +1,4 @@
+import { match } from "assert";
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 
@@ -11,36 +12,26 @@ const Cell = ({ rowIndex, colIndex, onAdd, onRemove }: { rowIndex: number, colIn
     const [bgColour, setBgColour] = useState("#ffffff");
 
 
-    //      let info1 = `rows: ${rowIndex+1}, columns: ${colIndex+1}` as any;
-
-
-    // const handleSubmit = (e: { preventDefault: () => void; }) => {
-    //add
-    //     const newArr = infos.slice();
-    //     newArr.splice(0, 0, { rows: rowIndex + 1,
-    //         columns: colIndex + 1});
-    //     setInfos(newArr);
-    //   };
-
+    // id: (Math.random() * 100).toFixed(0), 
     return (
-        <div className="over"
+        <div className="cell"
             onMouseOver={() => {
                 (bgColour == "#ffffff") ? setBgColour("#207df5") : setBgColour("#ffffff")
                 if(bgColour == "#ffffff"){
                 onAdd({ row: rowIndex + 1, col: colIndex + 1 })
                 } else {
-                    const infoWhite = { row: rowIndex + 1, col: colIndex + 1 }
+                    const infoWhite = { row: rowIndex + 1, col: colIndex + 1,  }
                     // console.log('remove');
                     onRemove(infoWhite)
-
-                    
                 }
             }}
+        
             style={{
                 backgroundColor: `${bgColour}`,
-                height: '3em',
-                width: '3em',
+                height: '5vh',
+                width: '5vh',
                 border: '.1rem solid',
+                maxWidth: 'vmin'
             }}>
         </div>
     )

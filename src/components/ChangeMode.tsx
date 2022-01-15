@@ -33,8 +33,12 @@ const ChangeMode = ({ dataMode }: { dataMode: any }) => {
     }
   }
 
+  
+            
   return (
-    <Card body className="col-md-4 ms-2 me-2 mt-3">
+    <Card body className="  ms-2 me-2 mt-3 container-fluid p-0 m-0 
+    align-items-center 
+    justify-content-center d-flex   ">
       <div className=" d-flex justify-content-center ">
         <select className="form-select me-2"
           value={value}
