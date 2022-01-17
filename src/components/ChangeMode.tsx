@@ -39,13 +39,10 @@ const ChangeMode = ({ dataMode }: { dataMode: any }) => {
 
   return (
     <div className="row m-auto p-2em d-flex align-items-flex-center justify-content-center boxSizing-border-box">
-      <Card body className=" container-fluid ms-4 me-4 mt-3 p-0 m-auto w-60 
-    align-items-center 
+      <Card body className=" container-fluid ms-4 me-4 mt-3 p-0 m-auto w-60 align-items-center 
     justify-content-center d-flex  m-auto justify-content-center w-fit-content " style={{
           width: "fit-content",
-          // blockSize: '75% content-box'
         }}>
-
         <div className=" d-flex justify-content-center ">
 
           <div>
@@ -81,7 +78,7 @@ const ChangeMode = ({ dataMode }: { dataMode: any }) => {
 
           <div className="justify-content-center ms-3" >
             <h4> Hover squares</h4>
-            <div style={{ maxHeight: '81vh', overflow: "auto", }}>
+            <div style={{ maxHeight: '50vh', overflow: 'auto', marginTop: '1.48em', }}>
               {data && data.map((i: any) => (
                 <div style={{
                   backgroundColor: "#fffae0", margin: ".2em",
