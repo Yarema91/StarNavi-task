@@ -8,13 +8,13 @@ type ChangeMode = {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void,
 }
 
-const ChangeMode = ({ dataMode }: { dataMode: any }) => {
+const ChangeMode = ({ dataMode }: { dataMode: any[] }) => {
 
   const [value, setValue] = useState('');
   const [fields, setFields] = useState<number>(5);
 
 
-  const [data, setData] = useState([]) as any;
+  const [data, setData] = useState([]) as any[];
 
 
 
@@ -65,7 +65,7 @@ const ChangeMode = ({ dataMode }: { dataMode: any }) => {
             <Field fields={fields}
               onAdd={(info: any, i: number) => {
                 // info.id = data.length + 1;
-                info.id = (Math.random() * 100).toFixed(2)
+                info.id = (Math.random() * 1000).toFixed(3)
                 setData([...data, info]);
               }}
               onRemove={(infoWhite: any) => {
