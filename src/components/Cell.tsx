@@ -14,9 +14,9 @@ const Cell = ({ index, rowIndex, colIndex, onAdd, onRemove }: { rowIndex: number
                 (bgColour == "#ffffff") ? setBgColour("#207df5") : setBgColour("#ffffff")
                 if (bgColour == "#ffffff") {
 
-                    onAdd({ row: rowIndex, col: colIndex })
+                    onAdd({ row: rowIndex+1, col: colIndex+1 })
                 } else {
-                    const infoWhite = { row: rowIndex, col: colIndex, }
+                    const infoWhite = { row: rowIndex+1, col: colIndex+1, }
                     onRemove(infoWhite)
                 }
             }}
