@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 
 
-const Cell = ({ index, rowIndex, colIndex, onAdd, onRemove }: { rowIndex: number, colIndex: number, index: number, onAdd: any, onRemove: any }) => {
+const Cell = ({ rowIndex, colIndex, onAdd, onRemove }: { rowIndex: number, colIndex: number, onAdd: any, onRemove: any }) => {
 
     const [bgColour, setBgColour] = useState("#ffffff");
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Cell from './Cell';
 
-const Fields = ({ fields, onAdd, onRemove }: { fields: number, rowIndex: number, colIndex: number, onAdd: any, onRemove: any }) => {
+const Fields = ({ fields, onAdd, onRemove }: { fields: number, onAdd: any, onRemove: any }) => {
 
     return (
 
@@ -17,8 +17,11 @@ const Fields = ({ fields, onAdd, onRemove }: { fields: number, rowIndex: number,
                 [...Array(fields)].map((_, colIndex) => (
 
                     <Cell key={colIndex + rowIndex}
-                        rowIndex={rowIndex} colIndex={colIndex}
-                        onAdd={onAdd} onRemove={onRemove} index={0} />
+                        rowIndex={rowIndex}
+                        colIndex={colIndex}
+                        onAdd={onAdd} 
+                        onRemove={onRemove} 
+                         />
                 ))
             ))
             }

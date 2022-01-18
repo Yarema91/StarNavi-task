@@ -13,7 +13,6 @@ const ChangeMode = ({ dataMode }: { dataMode: any[] }) => {
   const [value, setValue] = useState('');
   const [fields, setFields] = useState<number>(5);
 
-
   const [data, setData] = useState([]) as any[];
 
 
@@ -22,7 +21,7 @@ const ChangeMode = ({ dataMode }: { dataMode: any[] }) => {
     const selectValue = e.target.value;
     setValue(selectValue);
   }
-
+  
 
   const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -62,7 +61,8 @@ const ChangeMode = ({ dataMode }: { dataMode: any[] }) => {
             </div>
 
 
-            <Field fields={fields}
+            <Field
+              fields={fields}
               onAdd={(info: any, i: number) => {
                 // info.id = data.length + 1;
                 info.id = (Math.random() * 1000).toFixed(3)
@@ -73,7 +73,9 @@ const ChangeMode = ({ dataMode }: { dataMode: any[] }) => {
                   .filter((item: any) => !((item.row == infoWhite.row) && (item.col == infoWhite.col))
                   );
                 setData(newData);
-              }} rowIndex={0} colIndex={0} />
+              }}
+             
+            />
           </div>
 
           <div className="justify-content-center ms-3" >
